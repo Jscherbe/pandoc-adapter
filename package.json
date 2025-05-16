@@ -1,6 +1,6 @@
 {
   "name": "@ulu/pandoc-adapter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Node.js package that provides utilities for converting documents using Pandoc, with a focus on processing multiple files and managing extracted assets.",
   "author": "Joseph Scherben <jscherbe@gmail.com>",
   "homepage": "https://github.com/Jscherbe/pandoc-adapter#readme",
