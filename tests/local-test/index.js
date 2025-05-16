@@ -1,6 +1,6 @@
 import path from "path";
 import { getUrlDirname } from "@ulu/utils/node/path.js";
-import { transformFiles } from "../index.js";
+import { transformFiles } from "../../index.js";
 
 const __dirname = getUrlDirname(import.meta.url);
 
