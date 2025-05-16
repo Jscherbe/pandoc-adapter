@@ -1,0 +1,6 @@
+import { pandoc } from "./lib/pandoc.js";
+import presets from "./lib/presets.js"; 
+import { transformFiles, defaults as transformFilesDefaults } from "./lib/transform-files.js"; 
+import * as utils from "./lib/utils.js";
+
+export { pandoc, presets, transformFiles, transformFilesDefaults, utils };

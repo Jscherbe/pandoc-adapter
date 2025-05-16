@@ -1,0 +1,53 @@
+{
+  "name": "@ulu/pandoc-adapter",
+  "version": "0.0.1",
+  "description": "Pandoc adapter for node",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "types": "npx tsc",
+    "lint": "eslint ./lib --ext .js --ignore-path .gitignore",
+    "test": "node ./local-test/index.js"
+  },
+  "keywords": [
+    "pandoc",
+    "docx",
+    "converter",
+    "adapter"
+  ],
+  "exports": {
+    ".": {
+      "default": "./index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./types/*"
+      ]
+    }
+  },
+  "author": "Joe Scherben",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jscherbe/pandoc-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jscherbe/pandoc-adapter/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "which" : "^5.0.0",
+    "htmlfy" : "^0.7.5",
+    "posthtml" : "^0.16.6",
+    "@ulu/node-logger" : "^1.0.2",
+    "url-slug" : "^4.0.1",
+    "glob" : "^11.0.2",
+    "fs-extra" : "^11.3.0",
+    "@ulu/utils" : "^0.0.20"
+  }
+}
