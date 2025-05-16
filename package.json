@@ -1,11 +1,22 @@
 {
   "name": "@ulu/pandoc-adapter",
   "version": "0.0.1",
-  "description": "Pandoc adapter for node",
+  "description": "A Node.js package that provides utilities for converting documents using Pandoc, with a focus on processing multiple files and managing extracted assets.",
+  "author": "Joseph Scherben <jscherbe@gmail.com>",
+  "homepage": "https://github.com/Jscherbe/pandoc-adapter#readme",
+  "license": "MIT",
   "main": "index.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jscherbe/pandoc-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jscherbe/pandoc-adapter/issues"
+  },
   "scripts": {
     "types": "npx tsc",
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "lint": "eslint ./lib --ext .js --ignore-path .gitignore",
     "test": "node ./tests/local-test/index.js"
   },
@@ -13,7 +24,13 @@
     "pandoc",
     "docx",
     "converter",
-    "adapter"
+    "adapter",
+    "conversion",
+    "convert",
+    "markdown",
+    "stream",
+    "document conversion",
+    "cli wrapper"
   ],
   "exports": {
     ".": {
@@ -27,18 +44,11 @@
       ]
     }
   },
-  "author": "Joe Scherben",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jscherbe/pandoc-adapter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Jscherbe/pandoc-adapter/issues"
-  },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "docdash": "^2.0.2",
+    "jsdoc": "^4.0.2"
   },
   "dependencies": {
     "which" : "^5.0.0",

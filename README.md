@@ -1,6 +1,6 @@
 # @ulu/pandoc-adapter
 
-A Node.js package that provides utilities for converting documents using Pandoc, with a focus on processing multiple files and managing assets with transformFiles.
+A Node.js package that provides utilities for converting documents using Pandoc, with a focus on processing multiple files and managing extracted assets with transformFiles.
 
 **Important:** This package acts as a wrapper around the Pandoc command-line tool. Therefore, **you must have the Pandoc binary installed and accessible in your system's PATH** for this package to function correctly. This package itself does not install Pandoc.
 
@@ -11,6 +11,9 @@ A Node.js package that provides utilities for converting documents using Pandoc,
   - [`transformFilesDefaults`](#transformfilesdefaults)
 - [Exported Utilities (`utils`)](#exported-utilities-utils)
 - [Exported Presets (`presets`)](#exported-presets-presets)
+- [Full API Documentation](#full-api-documentation)
+- [Change Log](#change-log)
+
 
 ## Installation
 
@@ -151,3 +154,12 @@ Available presets:
   - `docxToMarkdown`
   - `docxToHtml`
   - `docxToIcml`
+
+## Full API Documentation
+
+[API Documentation](https://jscherbe.github.io/utils/)
+
+## Change Log
+
+[Change Log](CHANGELOG.md)
+

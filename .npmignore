@@ -2,3 +2,4 @@ README.dev.md
 tsconfig.json
 .eslintrc.cjs
 tests/
+jsdoc.json
