@@ -1,8 +1,16 @@
 # @ulu/pandoc-adapter
 
-A Node.js package that provides utilities for converting documents using Pandoc, with a focus on processing multiple files and managing assets.
+A Node.js package that provides utilities for converting documents using Pandoc, with a focus on processing multiple files and managing assets with transformFiles.
 
-- [Change Log](CHANGELOG.md)
+**Important:** This package acts as a wrapper around the Pandoc command-line tool. Therefore, **you must have the Pandoc binary installed and accessible in your system's PATH** for this package to function correctly. This package itself does not install Pandoc.
+
+- [Installation](#installation)
+- [Primary Functions](#primary-functions)
+  - [`pandoc(config)`](#pandocconfig)
+  - [`transformFiles(userOptions)`](#transformfilesuseroptions)
+  - [`transformFilesDefaults`](#transformfilesdefaults)
+- [Exported Utilities (`utils`)](#exported-utilities-utils)
+- [Exported Presets (`presets`)](#exported-presets-presets)
 
 ## Installation
 
@@ -54,7 +62,9 @@ const outputFilePath = 'output.html';
 
 ### `transformFiles(userOptions)`
 
-Transforms multiple files based on a glob pattern, converting them to both HTML and Markdown. It handles output directory creation, asset extraction, and optional URL updating.
+Transforms multiple files based on a glob pattern, converting them to both HTML and Markdown. It handles output directory creation, asset extraction, and optional URL updating. 
+
+When `updateAssetUrls` is enabled, it will replace the extracted asset path (`assetDir`) out of the images/etc and replacing it with `assetPublicPath` so that it can be used in a website. This `assetPublicPath` would be a root-relative path like "/assets/extracted" so that anywhere an image is used (ie. "/tools.html" vs /some/other/page.html") it would work (not relative to page). 
 
 ```js
 import path from "path";
@@ -64,6 +74,7 @@ import { transformFiles } from "@ulu/pandoc-adapter";
 const __dirname = getUrlDirname(import.meta.url);
 
 const options = {
+  pattern: '*.docx',
   inputDir: path.resolve(__dirname, "docx/"),
   outputDir: path.resolve(__dirname, "dist/markup/"),
   assetDir: path.resolve(__dirname, "dist/assets/"),
@@ -71,7 +82,7 @@ const options = {
 
 (async () => {
   try {
-    await transformFiles({ ...options, pattern: '*.docx' });
+    await transformFiles(options);
     console.log('Successfully processed files!');
   } catch (error) {
     console.error('File transformation failed:', error);
