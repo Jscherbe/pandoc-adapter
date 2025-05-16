@@ -8,15 +8,15 @@ export function transformFiles(userOptions?: TransformFilesOptions): Promise<voi
 /**
  * Default options for the transformFiles function.
  * @typedef {object} TransformFilesOptions
- * @property {string | null} inputDir - The directory containing the input files.
- * @property {string | null} outputDir - The directory where the output files will be written.
- * @property {string | null} assetDir - The directory where extracted media (images, etc.) will be written.
- * @property {string | null} assetPublicPath - The final asset path (images/etc paths are modified to point at this absolute path, like the base path in site it will be used in).
+ * @property {string} inputDir - The directory containing the input files.
+ * @property {string} outputDir - The directory where the output files will be written.
+ * @property {string} assetDir - The directory where extracted media (images, etc.) will be written.
+ * @property {string} assetPublicPath - The final asset path (images/etc paths are modified to point at this absolute path, like the base path in site it will be used in).
  * @property {string} pattern - The glob pattern used to select input files.
  * @property {boolean} emptyOutputDir - Empty (delete contents) of output directory before populating
  * @property {boolean} emptyAssetDir - Empty (delete contents) of asset directory before populating
  * @property {boolean} updateAssetUrls - Whether you want the asset paths (absolute based on assetDir) to be updated to assetPublicPath (relative as though in a website/etc)
- * @property {object} adapterOptions - Options to pass to the pandoc adapter.
+ * @property {import("./pandoc").PandocAdapterOptions} adapterOptions - Options to pass to the pandoc adapter.
  * @property {boolean} adapterOptions.allowError - Allow errors from pandoc.
  * @property {boolean} adapterOptions.allowStdoutError - Allow errors from pandoc stdout.
  * @property {object} adapterOptions.execFile - Options for the child_process.execFile.
@@ -40,19 +40,19 @@ export type TransformFilesOptions = {
     /**
      * - The directory containing the input files.
      */
-    inputDir: string | null;
+    inputDir: string;
     /**
      * - The directory where the output files will be written.
      */
-    outputDir: string | null;
+    outputDir: string;
     /**
      * - The directory where extracted media (images, etc.) will be written.
      */
-    assetDir: string | null;
+    assetDir: string;
     /**
      * - The final asset path (images/etc paths are modified to point at this absolute path, like the base path in site it will be used in).
      */
-    assetPublicPath: string | null;
+    assetPublicPath: string;
     /**
      * - The glob pattern used to select input files.
      */
@@ -72,12 +72,20 @@ export type TransformFilesOptions = {
     /**
      * - Options to pass to the pandoc adapter.
      */
-    adapterOptions: {
-        allowError: boolean;
-        allowStdoutError: boolean;
-        execFile: {
-            maxBuffer: number;
-        };
+    adapterOptions: import("./pandoc").PandocAdapterOptions;
+    /**
+     * - Allow errors from pandoc.
+     */
+    allowError: boolean;
+    /**
+     * - Allow errors from pandoc stdout.
+     */
+    allowStdoutError: boolean;
+    /**
+     * - Options for the child_process.execFile.
+     */
+    execFile: {
+        maxBuffer: number;
     };
     /**
      * - Function to determine the output file path.

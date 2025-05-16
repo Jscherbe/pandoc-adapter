@@ -7,7 +7,7 @@
   "scripts": {
     "types": "npx tsc",
     "lint": "eslint ./lib --ext .js --ignore-path .gitignore",
-    "test": "node ./local-test/index.js"
+    "test": "node ./tests/local-test/index.js"
   },
   "keywords": [
     "pandoc",

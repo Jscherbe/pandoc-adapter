@@ -1,3 +1,4 @@
 README.dev.md
 tsconfig.json
 .eslintrc.cjs
+tests/

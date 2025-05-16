@@ -5,16 +5,16 @@
  * @param {object} config - Configuration object for the pandoc execution.
  * @param {string} [config.input=""] - The input content to be processed by Pandoc. This can be a string which will be piped to Pandoc's stdin. If arguments to Pandoc specify an input file or URL, this can be an empty string.
  * @param {string[]} [config.args=[]] - An array of command-line arguments to pass to the Pandoc binary (e.g., `['-f', 'markdown', '-t', 'html', 'input.md', '-o', 'output.html']`).
- * @param {Options} [config.options={}] - Additional options to pass which will be merged with the module's defaults.
+ * @param {PandocAdapterOptions} [config.options={}] - Additional options to pass which will be merged with the module's defaults.
  * @returns {Promise<string>} A Promise that resolves with the stdout from the Pandoc binary.
  * @throws {Error|string} Rejects with an error if the Pandoc binary fails and `allowErrors` or `allowStdoutError` are false.
  */
 export function pandoc(config: {
     input?: string;
     args?: string[];
-    options?: Options;
+    options?: PandocAdapterOptions;
 }): Promise<string>;
-export type Options = {
+export type PandocAdapterOptions = {
     /**
      * - If true, resolves the promise with the stdout even on Pandoc process error.
      */
