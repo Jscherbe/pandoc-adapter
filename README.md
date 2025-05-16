@@ -157,7 +157,7 @@ Available presets:
 
 ## Full API Documentation
 
-[API Documentation](https://jscherbe.github.io/utils/)
+[API Documentation](https://jscherbe.github.io/pandoc-adapter/)
 
 ## Change Log
 

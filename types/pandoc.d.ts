@@ -3,14 +3,14 @@
  *
  * @async
  * @param {object} config - Configuration object for the pandoc execution.
- * @param {string} [config.input=""] - The input content to be processed by Pandoc. This can be a string which will be piped to Pandoc's stdin. If arguments to Pandoc specify an input file or URL, this can be an empty string.
+ * @param {string|stream.Readable} [config.input=""] - The input content to be processed by Pandoc. This can be a string which will be piped to Pandoc's stdin. If arguments to Pandoc specify an input file or URL, this can be an empty string.
  * @param {string[]} [config.args=[]] - An array of command-line arguments to pass to the Pandoc binary (e.g., `['-f', 'markdown', '-t', 'html', 'input.md', '-o', 'output.html']`).
  * @param {PandocAdapterOptions} [config.options={}] - Additional options to pass which will be merged with the module's defaults.
  * @returns {Promise<string>} A Promise that resolves with the stdout from the Pandoc binary.
  * @throws {Error|string} Rejects with an error if the Pandoc binary fails and `allowErrors` or `allowStdoutError` are false.
  */
 export function pandoc(config: {
-    input?: string;
+    input?: string | stream.Readable;
     args?: string[];
     options?: PandocAdapterOptions;
 }): Promise<string>;
