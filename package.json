@@ -1,6 +1,6 @@
 {
   "name": "@ulu/pandoc-adapter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Node.js package that provides utilities for converting documents using Pandoc, with a focus on processing multiple files and managing extracted assets.",
   "author": "Joseph Scherben <jscherbe@gmail.com>",
   "homepage": "https://github.com/Jscherbe/pandoc-adapter#readme",
@@ -18,7 +18,7 @@
     "types": "npx tsc",
     "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "lint": "eslint ./lib --ext .js --ignore-path .gitignore",
-    "test": "node ./tests/local-test/index.js"
+    "test": "node ./local/index.js"
   },
   "keywords": [
     "pandoc",
@@ -45,19 +45,19 @@
     }
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
     "docdash": "^2.0.2",
-    "jsdoc": "^4.0.2"
+    "eslint": "^8.56.0",
+    "jsdoc": "^4.0.2",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "which" : "^5.0.0",
-    "htmlfy" : "^0.7.5",
-    "posthtml" : "^0.16.6",
-    "@ulu/node-logger" : "^1.0.2",
-    "url-slug" : "^4.0.1",
-    "glob" : "^11.0.2",
-    "fs-extra" : "^11.3.0",
-    "@ulu/utils" : "^0.0.20"
+    "@ulu/node-logger": "^1.0.2",
+    "@ulu/utils": "^0.0.20",
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.2",
+    "js-beautify": "^1.15.4",
+    "posthtml": "^0.16.6",
+    "url-slug": "^4.0.1",
+    "which": "^5.0.0"
   }
 }

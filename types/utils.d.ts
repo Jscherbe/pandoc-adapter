@@ -15,15 +15,18 @@ export function markdownRemoveImageDimensions(markdown: string): string;
 /**
  * Eleventy Transform HTML Pretty
  * - Indents and cleans up HTML for packaging (not minify)
+ * @param {String} content - The content HTML to make pretty
+ * @param {String} beautifyOptions - Options passed to js beautify library
  */
-export default function htmlPretty(content: any): string;
+export default function htmlPretty(content: string, beautifyOptions?: string): any;
 /**
  * Processes HTML by removing image styles and then pretty-formatting it.
  *
  * @param {string} html - The HTML string to process.
+ * @param {object} beautifyOptions - Options to be passed to jsBeautify library for html cleanup
  * @returns {Promise<string>} A Promise that resolves with the processed and pretty-formatted HTML string.
  */
-export function cleanHtml(html: string): Promise<string>;
+export function cleanHtml(html: string, beautifyOptions: object): Promise<string>;
 /**
  * Converts a string to a URL-friendly slug.
  *
